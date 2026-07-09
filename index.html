@@ -122,27 +122,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .dts li{display:flex;gap:10px;align-items:flex-start;font-size:0.86rem;color:rgba(255,255,255,0.62);line-height:1.7;}
 .dts li::before{content:'—';color:var(--skydeep);flex-shrink:0;margin-top:2px;font-size:0.75rem;}
 
-/* CAREER PATH — org-chart / flowchart style */
-.path-scroll{overflow-x:auto;padding:6px 4px 10px;}
-.path-diagram{width:640px;max-width:none;margin:0 auto;}
+/* CAREER PATH — org-chart / flowchart style (fluid, no horizontal scroll) */
+.path-scroll{overflow-x:visible;padding:6px 4px 10px;}
+.path-diagram{width:100%;max-width:640px;margin:0 auto;}
 .path-row{position:relative;display:grid;justify-content:center;align-items:stretch;}
-.path-row.one{grid-template-columns:250px;}
-.path-row.two{grid-template-columns:250px 250px;column-gap:36px;}
-.path-box{background:var(--off);border:1.5px solid var(--sky2);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:78px;transition:transform 0.25s;}
+.path-row.one{grid-template-columns:minmax(0,420px);}
+.path-row.two{grid-template-columns:1fr 1fr;column-gap:clamp(14px,5vw,36px);}
+.path-box{background:var(--off);border:1.5px solid var(--sky2);border-radius:12px;padding:clamp(8px,3vw,16px) clamp(6px,2.5vw,14px);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:clamp(64px,14vw,78px);min-width:0;transition:transform 0.25s;}
 .path-box:hover{transform:translateY(-3px);}
 .path-box.now{background:var(--blue);border-color:var(--blue);box-shadow:0 10px 26px rgba(27,79,114,0.28);}
 .path-box.top{background:var(--ink);border-color:var(--ink);}
-.path-tag{font-size:0.56rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--skydeep);margin-bottom:6px;}
+.path-tag{font-size:clamp(0.46rem,1.8vw,0.56rem);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--skydeep);margin-bottom:6px;}
 .path-box.now .path-tag{color:var(--gold);}
 .path-box.top .path-tag{color:var(--gold);}
-.path-role{font-family:var(--ff-head);font-size:0.94rem;font-weight:700;color:var(--blue);line-height:1.32;}
+.path-role{font-family:var(--ff-head);font-size:clamp(0.66rem,2.8vw,0.94rem);font-weight:700;color:var(--blue);line-height:1.32;word-break:break-word;}
 .path-box.now .path-role,.path-box.top .path-role{color:#fff;}
-.path-sub{font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:var(--muted);margin-top:6px;text-transform:uppercase;}
+.path-sub{font-size:clamp(0.48rem,1.7vw,0.6rem);font-weight:700;letter-spacing:0.05em;color:var(--muted);margin-top:6px;text-transform:uppercase;}
 .path-box.now .path-sub,.path-box.top .path-sub{color:rgba(255,255,255,0.62);}
 
-.path-row.two .lat{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--skydeep);font-size:1.05rem;font-weight:700;background:var(--white);width:26px;height:26px;border-radius:50%;border:1.5px solid var(--sky2);display:flex;align-items:center;justify-content:center;z-index:2;}
+.path-row.two .lat{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--skydeep);font-size:clamp(0.8rem,3vw,1.05rem);font-weight:700;background:var(--white);width:clamp(20px,6vw,26px);height:clamp(20px,6vw,26px);border-radius:50%;border:1.5px solid var(--sky2);display:flex;align-items:center;justify-content:center;z-index:2;}
 
-.path-link{position:relative;height:34px;width:640px;margin:0 auto;}
+.path-link{position:relative;height:clamp(24px,6vw,34px);width:100%;max-width:640px;margin:0 auto;}
 .path-link .vline{position:absolute;width:2px;background:var(--sky2);}
 .path-link .hline{position:absolute;height:2px;background:var(--sky2);}
 .path-link .arrow::before{content:'';position:absolute;top:-1px;left:50%;transform:translate(-50%,-100%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:7px solid var(--sky2);}
@@ -162,8 +162,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 .path-note{font-size:0.86rem;color:var(--muted);line-height:1.9;background:var(--sky);border-left:3px solid var(--skydeep);padding:18px 22px;border-radius:8px;margin-top:38px;}
 .path-note strong{color:var(--blue);}
-.path-hint{display:none;font-size:0.68rem;color:var(--skydeep);font-weight:700;text-align:center;margin-bottom:10px;}
-@media(max-width:1400px){.path-hint{display:block;}}
 
 /* PORTFOLIO */
 .pcatlbl{font-size:0.6rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:var(--skydeep);display:flex;align-items:center;gap:9px;margin-bottom:16px;margin-top:36px;}
@@ -353,7 +351,6 @@ footer p{font-size:0.68rem;color:rgba(255,255,255,0.3);}
     <div class="sec-lbl rv">เส้นทางอาชีพ</div>
     <h2 class="about-q rv" style="font-size:clamp(1.5rem,2.4vw,2.2rem);margin-bottom:22px;">สาย <em>Marketing Data Analytics</em><br>จุดตัดของ Digital Marketing และ Data Analysis</h2>
 
-    <p class="path-hint">← เลื่อนดูแผนภาพทั้งหมด →</p>
     <div class="path-scroll rv">
       <div class="path-diagram">
 
