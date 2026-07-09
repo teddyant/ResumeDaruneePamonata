@@ -116,27 +116,48 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .dts li{display:flex;gap:10px;align-items:flex-start;font-size:0.86rem;color:rgba(255,255,255,0.62);line-height:1.7;}
 .dts li::before{content:'—';color:var(--skydeep);flex-shrink:0;margin-top:2px;font-size:0.75rem;}
 
-/* CAREER PATH */
-.path-track{display:flex;align-items:stretch;gap:0;}
-.path-step{flex:1;padding:26px 20px;background:var(--off);border:1px solid var(--sky2);border-radius:14px;display:flex;flex-direction:column;transition:transform 0.3s;}
-.path-step:hover{transform:translateY(-5px);}
-.path-step.now{background:var(--blue);border-color:var(--blue);box-shadow:0 10px 28px rgba(27,79,114,0.25);}
-.path-step.now .path-role,.path-step.now .path-desc{color:#fff;}
-.path-step.now .path-desc{color:rgba(255,255,255,0.78);}
-.path-tag{font-size:0.58rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--skydeep);margin-bottom:10px;}
-.path-step.now .path-tag{color:var(--gold);}
-.path-role{font-family:var(--ff-head);font-size:1.08rem;font-weight:700;color:var(--blue);margin-bottom:8px;line-height:1.28;}
-.path-desc{font-size:0.78rem;color:var(--muted);line-height:1.62;margin-bottom:14px;flex-grow:1;}
-.path-chips{display:flex;flex-wrap:wrap;gap:5px;}
-.path-chip{font-size:0.62rem;font-weight:600;padding:3px 9px;border-radius:12px;background:var(--sky);color:var(--blue);border:1px solid var(--sky2);}
-.path-step.now .path-chip{background:rgba(255,255,255,0.16);color:#fff;border-color:rgba(255,255,255,0.32);}
-.path-arrow{display:flex;align-items:center;justify-content:center;padding:0 10px;color:var(--sky2);font-size:1.4rem;}
+/* CAREER PATH — org-chart / flowchart style */
+.path-scroll{overflow-x:auto;padding:6px 4px 10px;}
+.path-diagram{width:640px;max-width:none;margin:0 auto;}
+.path-row{position:relative;display:grid;justify-content:center;align-items:stretch;}
+.path-row.one{grid-template-columns:250px;}
+.path-row.two{grid-template-columns:250px 250px;column-gap:36px;}
+.path-box{background:var(--off);border:1.5px solid var(--sky2);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:78px;transition:transform 0.25s;}
+.path-box:hover{transform:translateY(-3px);}
+.path-box.now{background:var(--blue);border-color:var(--blue);box-shadow:0 10px 26px rgba(27,79,114,0.28);}
+.path-box.top{background:var(--ink);border-color:var(--ink);}
+.path-tag{font-size:0.56rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--skydeep);margin-bottom:6px;}
+.path-box.now .path-tag{color:var(--gold);}
+.path-box.top .path-tag{color:var(--gold);}
+.path-role{font-family:var(--ff-head);font-size:0.94rem;font-weight:700;color:var(--blue);line-height:1.32;}
+.path-box.now .path-role,.path-box.top .path-role{color:#fff;}
+.path-sub{font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:var(--muted);margin-top:6px;text-transform:uppercase;}
+.path-box.now .path-sub,.path-box.top .path-sub{color:rgba(255,255,255,0.62);}
+
+.path-row.two .lat{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--skydeep);font-size:1.05rem;font-weight:700;background:var(--white);width:26px;height:26px;border-radius:50%;border:1.5px solid var(--sky2);display:flex;align-items:center;justify-content:center;z-index:2;}
+
+.path-link{position:relative;height:34px;width:640px;margin:0 auto;}
+.path-link .vline{position:absolute;width:2px;background:var(--sky2);}
+.path-link .hline{position:absolute;height:2px;background:var(--sky2);}
+.path-link .arrow::before{content:'';position:absolute;top:-1px;left:50%;transform:translate(-50%,-100%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:7px solid var(--sky2);}
+
+.path-link.merge .vl{left:25%;top:50%;height:50%;}
+.path-link.merge .vr{left:75%;top:50%;height:50%;}
+.path-link.merge .hline{left:25%;right:25%;top:50%;}
+.path-link.merge .vc{left:50%;top:0;height:50%;}
+
+.path-link.straight .vl{left:25%;top:0;height:100%;}
+.path-link.straight .vr{left:75%;top:0;height:100%;}
+
+.path-link.split .vc{left:50%;top:50%;height:50%;}
+.path-link.split .hline{left:25%;right:25%;top:50%;}
+.path-link.split .vl{left:25%;top:0;height:50%;}
+.path-link.split .vr{left:75%;top:0;height:50%;}
+
 .path-note{font-size:0.86rem;color:var(--muted);line-height:1.9;background:var(--sky);border-left:3px solid var(--skydeep);padding:18px 22px;border-radius:8px;margin-top:38px;}
 .path-note strong{color:var(--blue);}
-@media(max-width:1400px){
-  .path-track{flex-direction:column;}
-  .path-arrow{transform:rotate(90deg);padding:6px 0;}
-}
+.path-hint{display:none;font-size:0.68rem;color:var(--skydeep);font-weight:700;text-align:center;margin-bottom:10px;}
+@media(max-width:1400px){.path-hint{display:block;}}
 
 /* PORTFOLIO */
 .pcatlbl{font-size:0.6rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:var(--skydeep);display:flex;align-items:center;gap:9px;margin-bottom:16px;margin-top:36px;}
@@ -324,33 +345,65 @@ footer p{font-size:0.68rem;color:rgba(255,255,255,0.3);}
     <div class="sec-lbl rv">เส้นทางอาชีพ</div>
     <h2 class="about-q rv" style="font-size:clamp(1.5rem,2.4vw,2.2rem);margin-bottom:22px;">สาย <em>Marketing Data Analytics</em><br>จุดตัดของ Digital Marketing และ Data Analysis</h2>
 
-    <div class="path-track rv">
-      <div class="path-step now">
-        <div class="path-tag">ตอนนี้</div>
-        <div class="path-role">Marketing &amp; AI-Powered Data Coordinator</div>
-        <div class="path-desc">ดูแล Performance Marketing และประสานงาน พร้อมใช้ AI ดึง-วิเคราะห์ข้อมูลยอดขาย/Engagement ทำ Dashboard เสนอผู้บริหาร</div>
-        <div class="path-chips"><span class="path-chip">Ads Mgmt</span><span class="path-chip">Google Apps Script</span><span class="path-chip">AI Reporting</span></div>
-      </div>
-      <div class="path-arrow">→</div>
-      <div class="path-step">
-        <div class="path-tag">ก้าวต่อไป · 1–2 ปี</div>
-        <div class="path-role">Digital Marketing / Marketing Data Analyst</div>
-        <div class="path-desc">ยกระดับงาน Dashboard เดิมให้เป็นบทบาทวิเคราะห์เต็มตัว เชื่อม Ads Performance กับข้อมูลยอดขายเพื่อหา Insight เชิงกลยุทธ์</div>
-        <div class="path-chips"><span class="path-chip">Campaign Analytics</span><span class="path-chip">Data Visualization</span><span class="path-chip">SQL / Sheets</span></div>
-      </div>
-      <div class="path-arrow">→</div>
-      <div class="path-step">
-        <div class="path-tag">ระยะกลาง · 3–5 ปี</div>
-        <div class="path-role">Marketing Analytics / Growth Manager</div>
-        <div class="path-desc">วางกลยุทธ์การตลาดจากข้อมูล นำทีมเล็กด้าน Content-Ads-Data ตั้ง KPI และพยากรณ์ผลลัพธ์แคมเปญ</div>
-        <div class="path-chips"><span class="path-chip">Data Strategy</span><span class="path-chip">Forecasting</span><span class="path-chip">Team Lead</span></div>
-      </div>
-      <div class="path-arrow">→</div>
-      <div class="path-step">
-        <div class="path-tag">ระยะยาว</div>
-        <div class="path-role">Head of Marketing Analytics / BI &amp; Marketing Director</div>
-        <div class="path-desc">ดูแลภาพรวม Data-Driven Marketing ทั้งองค์กร เชื่อมทีม Marketing เข้ากับสาย Business Intelligence</div>
-        <div class="path-chips"><span class="path-chip">Business Intelligence</span><span class="path-chip">Executive Reporting</span></div>
+    <p class="path-hint">← เลื่อนดูแผนภาพทั้งหมด →</p>
+    <div class="path-scroll rv">
+      <div class="path-diagram">
+
+        <div class="path-row one">
+          <div class="path-box top">
+            <div class="path-tag">ระยะยาว</div>
+            <div class="path-role">Head of Marketing Analytics<br>/ BI &amp; Marketing Director</div>
+          </div>
+        </div>
+
+        <div class="path-link merge">
+          <span class="vline vl"></span><span class="vline vr"></span><span class="hline"></span><span class="vline vc arrow"></span>
+        </div>
+
+        <div class="path-row two">
+          <div class="path-box">
+            <div class="path-tag">3–5 ปี</div>
+            <div class="path-role">Digital Marketing /<br>Growth Manager</div>
+            <div class="path-sub">Data Strategy · Team Lead</div>
+          </div>
+          <span class="lat">⇄</span>
+          <div class="path-box">
+            <div class="path-tag">3–5 ปี</div>
+            <div class="path-role">Marketing Analytics<br>Manager</div>
+            <div class="path-sub">Forecasting · KPI</div>
+          </div>
+        </div>
+
+        <div class="path-link straight">
+          <span class="vline vl arrow"></span><span class="vline vr arrow"></span>
+        </div>
+
+        <div class="path-row two">
+          <div class="path-box">
+            <div class="path-tag">1–2 ปี</div>
+            <div class="path-role">Digital Marketing<br>Analyst</div>
+            <div class="path-sub">Campaign Analytics</div>
+          </div>
+          <span class="lat">⇄</span>
+          <div class="path-box">
+            <div class="path-tag">1–2 ปี</div>
+            <div class="path-role">Marketing Data<br>Analyst</div>
+            <div class="path-sub">Dashboard · SQL/Sheets</div>
+          </div>
+        </div>
+
+        <div class="path-link split">
+          <span class="vline vc"></span><span class="hline"></span><span class="vline vl arrow"></span><span class="vline vr arrow"></span>
+        </div>
+
+        <div class="path-row one">
+          <div class="path-box now">
+            <div class="path-tag">ตอนนี้</div>
+            <div class="path-role">Marketing &amp; AI-Powered<br>Data Coordinator</div>
+            <div class="path-sub">Ads · Content · AI Reporting</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
