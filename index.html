@@ -116,6 +116,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .dts li{display:flex;gap:10px;align-items:flex-start;font-size:0.86rem;color:rgba(255,255,255,0.62);line-height:1.7;}
 .dts li::before{content:'—';color:var(--skydeep);flex-shrink:0;margin-top:2px;font-size:0.75rem;}
 
+/* CAREER PATH */
+.path-track{display:flex;align-items:stretch;gap:0;}
+.path-step{flex:1;padding:26px 20px;background:var(--off);border:1px solid var(--sky2);border-radius:14px;display:flex;flex-direction:column;transition:transform 0.3s;}
+.path-step:hover{transform:translateY(-5px);}
+.path-step.now{background:var(--blue);border-color:var(--blue);box-shadow:0 10px 28px rgba(27,79,114,0.25);}
+.path-step.now .path-role,.path-step.now .path-desc{color:#fff;}
+.path-step.now .path-desc{color:rgba(255,255,255,0.78);}
+.path-tag{font-size:0.58rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--skydeep);margin-bottom:10px;}
+.path-step.now .path-tag{color:var(--gold);}
+.path-role{font-family:var(--ff-head);font-size:1.08rem;font-weight:700;color:var(--blue);margin-bottom:8px;line-height:1.28;}
+.path-desc{font-size:0.78rem;color:var(--muted);line-height:1.62;margin-bottom:14px;flex-grow:1;}
+.path-chips{display:flex;flex-wrap:wrap;gap:5px;}
+.path-chip{font-size:0.62rem;font-weight:600;padding:3px 9px;border-radius:12px;background:var(--sky);color:var(--blue);border:1px solid var(--sky2);}
+.path-step.now .path-chip{background:rgba(255,255,255,0.16);color:#fff;border-color:rgba(255,255,255,0.32);}
+.path-arrow{display:flex;align-items:center;justify-content:center;padding:0 10px;color:var(--sky2);font-size:1.4rem;}
+.path-note{font-size:0.86rem;color:var(--muted);line-height:1.9;background:var(--sky);border-left:3px solid var(--skydeep);padding:18px 22px;border-radius:8px;margin-top:38px;}
+.path-note strong{color:var(--blue);}
+@media(max-width:1400px){
+  .path-track{flex-direction:column;}
+  .path-arrow{transform:rotate(90deg);padding:6px 0;}
+}
+
 /* PORTFOLIO */
 .pcatlbl{font-size:0.6rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:var(--skydeep);display:flex;align-items:center;gap:9px;margin-bottom:16px;margin-top:36px;}
 .pcatlbl:first-of-type{margin-top:0;}
@@ -190,6 +212,7 @@ footer p{font-size:0.68rem;color:rgba(255,255,255,0.3);}
   <div class="nav-links">
     <a href="#about">เกี่ยวกับ</a>
     <a href="#exp">ประสบการณ์</a>
+    <a href="#path">เส้นทางอาชีพ</a>
     <a href="#port">ผลงาน</a>
     <a href="#contact">ติดต่อ</a>
   </div>
@@ -292,6 +315,46 @@ footer p{font-size:0.68rem;color:rgba(255,255,255,0.3);}
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- CAREER PATH -->
+<div class="sec-white" id="path">
+  <div class="wrap">
+    <div class="sec-lbl rv">เส้นทางอาชีพ</div>
+    <h2 class="about-q rv" style="font-size:clamp(1.5rem,2.4vw,2.2rem);margin-bottom:22px;">สาย <em>Marketing Data Analytics</em><br>จุดตัดของ Digital Marketing และ Data Analysis</h2>
+
+    <div class="path-track rv">
+      <div class="path-step now">
+        <div class="path-tag">ตอนนี้</div>
+        <div class="path-role">Marketing &amp; AI-Powered Data Coordinator</div>
+        <div class="path-desc">ดูแล Performance Marketing และประสานงาน พร้อมใช้ AI ดึง-วิเคราะห์ข้อมูลยอดขาย/Engagement ทำ Dashboard เสนอผู้บริหาร</div>
+        <div class="path-chips"><span class="path-chip">Ads Mgmt</span><span class="path-chip">Google Apps Script</span><span class="path-chip">AI Reporting</span></div>
+      </div>
+      <div class="path-arrow">→</div>
+      <div class="path-step">
+        <div class="path-tag">ก้าวต่อไป · 1–2 ปี</div>
+        <div class="path-role">Digital Marketing / Marketing Data Analyst</div>
+        <div class="path-desc">ยกระดับงาน Dashboard เดิมให้เป็นบทบาทวิเคราะห์เต็มตัว เชื่อม Ads Performance กับข้อมูลยอดขายเพื่อหา Insight เชิงกลยุทธ์</div>
+        <div class="path-chips"><span class="path-chip">Campaign Analytics</span><span class="path-chip">Data Visualization</span><span class="path-chip">SQL / Sheets</span></div>
+      </div>
+      <div class="path-arrow">→</div>
+      <div class="path-step">
+        <div class="path-tag">ระยะกลาง · 3–5 ปี</div>
+        <div class="path-role">Marketing Analytics / Growth Manager</div>
+        <div class="path-desc">วางกลยุทธ์การตลาดจากข้อมูล นำทีมเล็กด้าน Content-Ads-Data ตั้ง KPI และพยากรณ์ผลลัพธ์แคมเปญ</div>
+        <div class="path-chips"><span class="path-chip">Data Strategy</span><span class="path-chip">Forecasting</span><span class="path-chip">Team Lead</span></div>
+      </div>
+      <div class="path-arrow">→</div>
+      <div class="path-step">
+        <div class="path-tag">ระยะยาว</div>
+        <div class="path-role">Head of Marketing Analytics / BI &amp; Marketing Director</div>
+        <div class="path-desc">ดูแลภาพรวม Data-Driven Marketing ทั้งองค์กร เชื่อมทีม Marketing เข้ากับสาย Business Intelligence</div>
+        <div class="path-chips"><span class="path-chip">Business Intelligence</span><span class="path-chip">Executive Reporting</span></div>
+      </div>
+    </div>
+
+    <p class="path-note rv">💡 <strong>ทำไมถึงเลือกสายนี้:</strong> จากประสบการณ์ 5+ ปีที่มีทั้งฝั่ง Performance Marketing (Ads, Content, IR/PR) และฝั่ง AI-Powered Data Analysis (Google Apps Script, Dashboard, Trend Analysis) — การเลือกไปทาง <strong>Digital Marketing อย่างเดียว</strong> จะทิ้งจุดแข็งเรื่องข้อมูลที่สร้างมา ส่วนการกระโดดไปสาย <strong>Data Analysis ล้วน</strong> ต้องแข่งกับผู้จบสาย Data/CS โดยตรงซึ่งไม่ใช่จุดแข็งของเรา ทางที่ได้เปรียบที่สุดคือ <strong>Marketing Data Analytics</strong> — ใช้ทักษะ Ads + AI Data ที่มีอยู่แล้วต่อยอดเป็นความเชี่ยวชาญเฉพาะทาง ซึ่งตลาดต้องการสูงและมีคู่แข่งน้อยกว่าการเลือกทางใดทางหนึ่งแบบสุดขั้ว</p>
   </div>
 </div>
 
