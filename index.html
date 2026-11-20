@@ -60,6 +60,12 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
 .hero-nick{font-family:var(--ff-head);font-style:italic;font-size:1.05rem;color:var(--muted);margin-bottom:18px;animation:su .9s .08s cubic-bezier(.16,1,.3,1) both;}
 .hero-title{display:inline-block;font-size:0.86rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--pinkdeep);margin-bottom:16px;animation:su .9s .16s cubic-bezier(.16,1,.3,1) both;}
 .hero-desc{font-size:1rem;color:var(--ink2);line-height:1.85;max-width:560px;margin-bottom:28px;animation:su .9s .24s cubic-bezier(.16,1,.3,1) both;}
+.hero-focus{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,max-content));gap:10px 28px;margin-bottom:18px;animation:su .9s .24s cubic-bezier(.16,1,.3,1) both;}
+.hero-focus li{position:relative;padding-left:18px;font-size:1rem;font-weight:500;color:var(--ink2);line-height:1.5;}
+.hero-focus li::before{content:'';position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--grad);}
+.hero-exp{display:inline-flex;align-items:baseline;gap:8px;font-size:0.92rem;color:var(--muted);margin-bottom:26px;padding-top:14px;border-top:1px dashed var(--sky2);animation:su .9s .28s cubic-bezier(.16,1,.3,1) both;}
+.hero-exp b{font-family:var(--ff-head);font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+@media (max-width:480px){.hero-focus{grid-template-columns:1fr;gap:8px;}}
 .hero-chips{display:flex;flex-wrap:wrap;gap:8px;max-width:560px;animation:su .9s .3s cubic-bezier(.16,1,.3,1) both;}
 .hchip{font-size:0.74rem;font-weight:500;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,0.75);border:1px solid #fff;color:var(--ink2);box-shadow:0 4px 14px -8px rgba(70,110,160,0.35);}
 .hero-btns{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;animation:su .9s .36s cubic-bezier(.16,1,.3,1) both;}
@@ -270,7 +276,13 @@ footer p{font-size:0.75rem;color:var(--muted);}
     <h1 class="hero-name">ดารุณี<br><span class="g">ปะโมนะตา</span></h1>
     <p class="hero-nick">Darunee Pamonata (แอ๊นท์)</p>
     <p class="hero-title">Digital Marketing &amp; AI Specialist</p>
-    <p class="hero-desc">AI-Powered Analytics · Performance Marketing · Data Reporting · AI-Assisted Web Development — ประสบการณ์ 5+ ปี</p>
+    <ul class="hero-focus">
+      <li>AI-Powered Analytics</li>
+      <li>Performance Marketing</li>
+      <li>Data Reporting</li>
+      <li>AI-Assisted Web Development</li>
+    </ul>
+    <p class="hero-exp"><b>5+</b> ปี ประสบการณ์ด้าน Digital Marketing &amp; Data</p>
     <div class="hero-chips">
       <span class="hchip">AI Tools</span><span class="hchip">Data Analysis</span>
       <span class="hchip">Performance Marketing</span><span class="hchip">Content &amp; SEO / GEO</span>
@@ -310,7 +322,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
     </div>
     <div class="sgroups">
       <div class="glass sg rv"><div class="sg-h"><span class="sg-ic">🤖</span>AI Tools &amp; Workflow</div>
-        <div class="chips"><span class="chip hi">Claude</span><span class="chip hi">ChatGPT</span><span class="chip hi">Gemini</span><span class="chip hi">NotebookLM</span><span class="chip hi">Notion AI</span></div></div>
+        <div class="chips"><span class="chip hi">Claude</span><span class="chip hi">ChatGPT</span><span class="chip hi">Gemini</span><span class="chip hi">NotebookLM</span><span class="chip hi">Notion AI</span><span class="chip hi">Codex</span><span class="chip hi">GitHub</span><span class="chip hi">Vercel</span></div></div>
       <div class="glass sg rv d1"><div class="sg-h"><span class="sg-ic">📊</span>Data Analysis</div>
         <div class="chips"><span class="chip pk">Google Apps Script</span><span class="chip pk">Data Dashboard</span><span class="chip pk">Data Visualization</span><span class="chip">Sales Report</span></div></div>
       <div class="glass sg rv"><div class="sg-h"><span class="sg-ic">📣</span>Performance Marketing</div>
@@ -515,6 +527,20 @@ footer p{font-size:0.75rem;color:var(--muted);}
         <div class="plinks"><a href="https://teddyant.github.io/PortfoliobyDARUNEEPAMONATA/09_ProductHub.html" class="plink" target="_blank" rel="noopener">🔗 เปิดดูระบบ (demo / demo1234)</a></div>
       </div>
     </article>
+
+    <article class="pcard full rv">
+      <div class="pimg-w"><img class="pimg" src="assets/cover-teddyant-world.jpg" alt="TEDDYANT World" loading="lazy"><span class="pnum">09</span></div>
+      <div class="pbody"><span class="pbadge bg">Three.js 3D · Web Game</span>
+        <h3 class="ptitle">Welcome to my TEDDYANT World</h3>
+        <p class="pdesc">เว็บคริสต์มาสและปีใหม่ 2027 สไตล์บล็อก LEGO แบบ 3D ชื่อเว็บต่อตัวเองจากตัวต่อ แล้วเปิดเข้าสู่ปราสาทหิมะพร้อมเพลงกล่องดนตรี มีมินิเกม 3 แบบ: เดินเก็บดาวและของขวัญ, Broom Chase ขี่ไม้กวาดไล่จับดาวทอง และ The Missing Star เกมนักสืบสำหรับเด็ก (ไทย / อังกฤษ) เล่นได้ทั้งมือถือและคอมพิวเตอร์</p>
+        <div class="plinks">
+          <a href="https://teddyant.github.io/welcometomyteddyantworld/" class="plink" target="_blank" rel="noopener">🎄 เข้าเว็บ</a>
+          <a href="https://teddyant.github.io/welcometomyteddyantworld/broom/" class="plink" target="_blank" rel="noopener">🧹 Broom Chase</a>
+          <a href="https://teddyant.github.io/welcometomyteddyantworld/mystery/" class="plink" target="_blank" rel="noopener">⭐ The Missing Star</a>
+        </div>
+      </div>
+    </article>
+
 
   </div>
 </section>
