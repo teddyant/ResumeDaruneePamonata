@@ -51,73 +51,103 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
 .nav-cta{background:var(--ink)!important;color:#fff!important;}
 .nav-cta:hover{background:var(--pinkdeep)!important;}
 
-/* HERO — pastel macro-pad: lid with typing screen, hinge, key deck spelling ANT / RESUME */
-.hero{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px;padding:118px 6vw 72px;overflow:hidden;text-align:center;}
+/* HERO — cream & latte macro-pad: tilted lid with screen, caramel hinge, extruded key deck (ANT / RESUME) */
+.hero{--cr0:#FFFBF5;--cr1:#F7EEE2;--cr2:#ECDDC9;--cr3:#DCC7AC;--cr4:#C9AF8F;--cr5:#B39573;--mocha:#4A382C;--mocha2:#3B2C22;--cocoa:#7A5C45;--caramel:#D9A877;--hx:#5A4232;
+  position:relative;display:flex;flex-direction:column;align-items:center;gap:22px;padding:118px 6vw 80px;overflow:hidden;text-align:center;
+  background:radial-gradient(900px 520px at 50% 62%,rgba(236,221,201,0.75),transparent 70%),radial-gradient(700px 400px at 12% 10%,rgba(247,238,226,0.9),transparent 70%);}
 #scene{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
 .hero-intro,.device-wrap,.hero-hint{position:relative;z-index:2;}
-.avail{display:inline-flex;align-items:center;gap:9px;font-size:0.78rem;font-weight:500;color:var(--ink2);background:rgba(255,255,255,0.75);border:1px solid #fff;padding:6px 15px;border-radius:999px;box-shadow:0 6px 18px -10px rgba(70,110,160,0.35);}
-.avail .live{width:8px;height:8px;border-radius:50%;background:#5BC99A;box-shadow:0 0 0 4px rgba(91,201,154,0.22);animation:pulse 2.4s ease-in-out infinite;}
-@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(91,201,154,0.08);}}
-.hello{font-family:var(--ff-head);font-size:clamp(2.1rem,5vw,3.6rem);font-weight:800;line-height:1.15;color:var(--ink);margin:14px 0 8px;animation:su .9s cubic-bezier(.16,1,.3,1) both;}
-.hello .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.hello-sub{font-size:1rem;color:var(--ink2);line-height:1.7;animation:su .9s .1s cubic-bezier(.16,1,.3,1) both;}
-.hello-sub b{font-weight:600;color:var(--ink);}
+.avail{display:inline-flex;align-items:center;gap:9px;font-size:0.78rem;font-weight:500;color:var(--hx);background:rgba(255,251,245,0.85);border:1px solid #fff;padding:6px 15px;border-radius:999px;box-shadow:0 6px 18px -10px rgba(120,90,60,0.4);}
+.avail .live{width:8px;height:8px;border-radius:50%;background:#6BBF8E;box-shadow:0 0 0 4px rgba(107,191,142,0.22);animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(107,191,142,0.08);}}
+.hello{font-family:var(--ff-head);font-size:clamp(2.2rem,5.4vw,3.9rem);font-weight:800;line-height:1.15;color:var(--hx);margin:14px 0 6px;animation:su .9s cubic-bezier(.16,1,.3,1) both;}
+.hello .en{display:block;font-family:var(--ff-head);font-style:italic;font-weight:500;font-size:0.38em;letter-spacing:0.02em;color:var(--cocoa);margin-top:6px;}
+.hello-role{font-size:0.86rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#A87B52;margin-top:10px;animation:su .9s .08s cubic-bezier(.16,1,.3,1) both;}
+.hello-sub{font-size:0.98rem;color:#6E5A4A;line-height:1.7;margin-top:6px;animation:su .9s .12s cubic-bezier(.16,1,.3,1) both;}
 .nw{white-space:nowrap;display:inline-block;}
 
-.device-wrap{width:min(880px,100%);perspective:1600px;animation:su 1s .18s cubic-bezier(.16,1,.3,1) both;}
-.device{position:relative;transform:rotateX(9deg);transition:transform .5s cubic-bezier(.16,1,.3,1);}
+.device-wrap{width:min(900px,100%);perspective:1400px;perspective-origin:50% 20%;margin-top:8px;animation:su 1s .18s cubic-bezier(.16,1,.3,1) both;}
+.device{position:relative;transform:rotateX(16deg);transform-origin:50% 60%;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+.device::after{content:'';position:absolute;left:6%;right:6%;bottom:-46px;height:60px;border-radius:50%;background:radial-gradient(closest-side,rgba(110,80,50,0.38),transparent);filter:blur(6px);z-index:-1;}
 .case{position:relative;border-radius:34px;padding:20px;
-  background:linear-gradient(150deg,#FFFFFF 0%,#EEF3FA 38%,#DCE4F0 100%);
-  box-shadow:inset 0 2px 0 #fff,inset 0 -3px 0 rgba(120,140,175,0.25),0 2px 0 #C9D3E2,0 4px 0 #BCC7D8,0 34px 60px -26px rgba(70,100,150,0.55);}
-.screw{position:absolute;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#C9D2DF 60%,#9AA6B8);box-shadow:inset 0 -1px 1px rgba(0,0,0,0.15),0 1px 1px #fff;}
-.screw::after{content:'';position:absolute;left:3px;right:3px;top:50%;height:1.5px;margin-top:-.75px;background:#8C98AB;transform:rotate(35deg);border-radius:1px;}
+  background:linear-gradient(160deg,var(--cr0) 0%,var(--cr1) 35%,var(--cr2) 100%);
+  box-shadow:inset 0 2px 0 #fff,inset 0 -2px 0 rgba(150,115,80,0.25),
+    0 1px 0 var(--cr3),0 2px 0 var(--cr3),0 3px 0 var(--cr3),0 4px 0 var(--cr4),0 5px 0 var(--cr4),0 6px 0 var(--cr4),
+    0 7px 0 var(--cr4),0 8px 0 var(--cr5),0 9px 0 var(--cr5),0 10px 0 var(--cr5),0 11px 0 var(--cr5),0 12px 0 #A6866A,
+    0 40px 60px -24px rgba(110,80,50,0.55);}
+.lid{transform:perspective(1100px) rotateX(-14deg);transform-origin:50% 100%;margin:0 4%;}
+.screw{position:absolute;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#E3D3BD 55%,#B39573);box-shadow:inset 0 -1px 1px rgba(80,50,20,0.25),0 1px 1px #fff;}
+.screw::after{content:'';position:absolute;left:3px;right:3px;top:50%;height:1.5px;margin-top:-.75px;background:#9A7B5E;transform:rotate(35deg);border-radius:1px;}
 .screw.tl{top:12px;left:12px}.screw.tr{top:12px;right:12px}.screw.bl{bottom:12px;left:12px}.screw.br{bottom:12px;right:12px}
 
-.screen{position:relative;border-radius:18px;padding:16px 22px 20px;min-height:132px;text-align:left;
-  background:radial-gradient(120% 140% at 50% -20%,#34466B 0%,#1E2A44 55%,#161F34 100%);
-  box-shadow:inset 0 3px 10px rgba(0,0,0,0.55),inset 0 0 0 2px rgba(255,255,255,0.05),0 1px 0 #fff;overflow:hidden;}
-.screen::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.035) 0 1px,transparent 1px 3px),linear-gradient(115deg,rgba(255,255,255,0.08),transparent 40%);pointer-events:none;}
-.scr-top{display:flex;justify-content:space-between;gap:12px;font-family:var(--ff-mono);font-size:0.66rem;letter-spacing:0.16em;text-transform:uppercase;color:#9CC9F2;}
-.scr-top .st{color:#F6A9C7;display:inline-flex;align-items:center;gap:6px;}
+.screen{position:relative;border-radius:18px;padding:16px 22px 20px;min-height:136px;text-align:left;
+  background:radial-gradient(120% 150% at 50% -30%,#6A5141 0%,var(--mocha) 52%,var(--mocha2) 100%);
+  box-shadow:inset 0 4px 12px rgba(0,0,0,0.5),inset 0 0 0 2px rgba(255,255,255,0.05),0 1px 0 #fff,0 0 0 5px rgba(201,175,143,0.35);overflow:hidden;}
+.screen::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.035) 0 1px,transparent 1px 3px),linear-gradient(115deg,rgba(255,255,255,0.1),transparent 42%);pointer-events:none;}
+.scr-top{display:flex;justify-content:space-between;gap:12px;font-family:var(--ff-mono);font-size:0.66rem;letter-spacing:0.16em;text-transform:uppercase;color:#E9CDAF;}
+.scr-top .st{color:#F2B98A;display:inline-flex;align-items:center;gap:6px;}
 .scr-top .st::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;}
 .scr-body{display:flex;align-items:center;gap:16px;margin-top:16px;}
-.scr-body img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:center 18%;flex-shrink:0;box-shadow:0 0 0 2px rgba(246,169,199,0.65),0 0 18px rgba(156,201,242,0.35);}
-.typed{font-family:var(--ff-mono);font-size:clamp(0.82rem,1.6vw,1rem);line-height:1.6;color:#EAF3FF;min-height:3.2em;text-shadow:0 0 10px rgba(156,201,242,0.45);}
-.caret{display:inline-block;width:.55em;height:1.05em;margin-left:2px;vertical-align:-0.15em;background:#F6A9C7;animation:blink 1s steps(1) infinite;}
+.scr-body img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:center 18%;flex-shrink:0;box-shadow:0 0 0 2px rgba(242,185,138,0.7),0 0 18px rgba(242,185,138,0.3);}
+.typed{font-family:var(--ff-mono);font-size:clamp(0.82rem,1.6vw,1rem);line-height:1.6;color:#FBF1E4;min-height:3.2em;text-shadow:0 0 10px rgba(242,185,138,0.35);}
+.caret{display:inline-block;width:.55em;height:1.05em;margin-left:2px;vertical-align:-0.15em;background:#F2B98A;animation:blink 1s steps(1) infinite;}
 @keyframes blink{50%{opacity:0;}}
 
-.hinge{position:relative;height:22px;margin:-4px auto;width:30%;min-width:140px;border-radius:11px;z-index:2;
-  background:repeating-linear-gradient(90deg,#F7B9D0 0 5px,#E38AAF 5px 7px,#FFD6E5 7px 9px);
-  box-shadow:inset 0 3px 3px rgba(255,255,255,0.65),inset 0 -4px 5px rgba(150,50,90,0.35),0 3px 6px rgba(150,80,120,0.25);}
+.hinge{position:relative;height:24px;margin:-6px auto -4px;width:32%;min-width:150px;border-radius:12px;z-index:3;
+  background:linear-gradient(180deg,rgba(255,255,255,0.55),transparent 45%,rgba(90,55,25,0.35)),repeating-linear-gradient(90deg,#E8C29A 0 5px,#C9966A 5px 7px,#F3DCC2 7px 9px);
+  box-shadow:0 4px 6px rgba(110,70,40,0.3);}
 
 .deck{display:flex;flex-direction:column;gap:14px;}
-.well{display:flex;gap:14px;padding:14px;border-radius:20px;background:linear-gradient(180deg,#E3EAF4,#F1F5FA);box-shadow:inset 0 3px 8px rgba(90,110,150,0.28),inset 0 -1px 0 #fff;}
-.key{--c1:#fff;--c2:#eee;--c3:#ccc;--tx:var(--ink);
+.well{display:flex;gap:14px;padding:14px 14px 18px;border-radius:20px;background:linear-gradient(180deg,#E2D2BC,#EFE4D5);box-shadow:inset 0 4px 10px rgba(110,80,50,0.32),inset 0 -1px 0 #fff;}
+.key{--c1:#fff;--c2:#eee;--c3:#ccc;--c4:#aaa;--tx:#4E3626;
   position:relative;flex:1;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;min-width:0;
   padding:12px 14px 11px;border-radius:16px;text-decoration:none;color:var(--tx);cursor:pointer;
-  background:linear-gradient(180deg,var(--c1),var(--c2));
-  box-shadow:inset 0 2px 0 rgba(255,255,255,0.85),inset 0 -2px 0 rgba(0,0,0,0.05),0 6px 0 var(--c3),0 12px 16px -6px rgba(60,80,120,0.45);
+  background:radial-gradient(130% 90% at 50% 0%,rgba(255,255,255,0.65),transparent 55%),linear-gradient(180deg,var(--c1),var(--c2));
+  box-shadow:inset 0 2px 0 rgba(255,255,255,0.9),inset 0 -3px 6px rgba(90,60,30,0.12),
+    0 2px 0 var(--c3),0 4px 0 var(--c3),0 6px 0 var(--c4),0 8px 0 var(--c4),0 10px 0 var(--c4),0 18px 18px -8px rgba(90,60,35,0.5);
   transform:translateY(0);transition:transform .12s ease,box-shadow .12s ease,filter .2s;}
-.key:hover{filter:brightness(1.03) saturate(1.05);transform:translateY(-2px);box-shadow:inset 0 2px 0 rgba(255,255,255,0.85),0 8px 0 var(--c3),0 16px 20px -8px rgba(60,80,120,0.45);}
-.key:active,.key.down{transform:translateY(5px);box-shadow:inset 0 2px 0 rgba(255,255,255,0.7),0 1px 0 var(--c3),0 4px 8px -4px rgba(60,80,120,0.4);}
-.key:focus-visible{outline:3px solid var(--skydeep);outline-offset:4px;}
-.key b{font-family:var(--ff-key);font-weight:800;line-height:1;font-size:clamp(1.8rem,4.4vw,3.1rem);}
-.key small{font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;opacity:.8;line-height:1.35;text-align:left;max-width:100%;}
+.key:hover{filter:brightness(1.03);transform:translateY(-2px);}
+.key:active,.key.down{transform:translateY(8px);box-shadow:inset 0 2px 0 rgba(255,255,255,0.7),inset 0 -2px 4px rgba(90,60,30,0.12),0 1px 0 var(--c3),0 2px 0 var(--c4),0 6px 8px -4px rgba(90,60,35,0.45);}
+.key:focus-visible{outline:3px solid #C9966A;outline-offset:5px;}
+.key b{font-family:var(--ff-key);font-weight:800;line-height:1;font-size:clamp(1.8rem,4.4vw,3.1rem);text-shadow:0 1px 0 rgba(255,255,255,0.6);}
+.key small{font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;opacity:.85;line-height:1.35;text-align:left;max-width:100%;}
 .r1 .key{min-height:118px;}
 .r2 .key{min-height:96px;}
 .r2 .key b{font-size:clamp(1.5rem,3.4vw,2.4rem);}
-.k-sky{--c1:#DDF0FF;--c2:#B7DCFA;--c3:#8DBFE8;--tx:#21507A;}
-.k-pink{--c1:#FFE3EE;--c2:#FBC0D6;--c3:#E596B6;--tx:#8E3460;}
-.k-lav{--c1:#EEE7FF;--c2:#D6C9F6;--c3:#B3A1E2;--tx:#4D3A87;}
-.k-mint{--c1:#E3F8EF;--c2:#BFEBD8;--c3:#93D2B7;--tx:#21664B;}
-.k-butter{--c1:#FFF6D9;--c2:#FDE6A6;--c3:#E7C772;--tx:#7A5A12;}
-.k-peach{--c1:#FFEADF;--c2:#FDCDB8;--c3:#E7A88D;--tx:#8A4224;}
-.k-enter{flex:2;--c1:#34466B;--c2:#24324D;--c3:#121A2C;--tx:#fff;flex-direction:row;align-items:center;gap:10px;}
-.k-enter b{font-family:var(--ff-body);font-size:1.8rem;font-weight:400;}
+.k-cream{--c1:#FFFAF2;--c2:#F2E6D3;--c3:#DCC8AA;--c4:#C4AA86;--tx:#6B4F33;}
+.k-latte{--c1:#F6E8D6;--c2:#E7CFB0;--c3:#CFAF89;--c4:#B48F67;--tx:#5E4127;}
+.k-caramel{--c1:#F6DDC0;--c2:#E9BF91;--c3:#D09E6C;--c4:#B07F50;--tx:#5F3717;}
+.k-honey{--c1:#FBEFD0;--c2:#F0D9A0;--c3:#D8BB73;--c4:#BC9C52;--tx:#634B12;}
+.k-blush{--c1:#FAEAE2;--c2:#EDCDBE;--c3:#D6AE9A;--c4:#BA8E79;--tx:#6E3E2E;}
+.k-mocha{--c1:#EEDFD2;--c2:#DCC3AE;--c3:#C0A189;--c4:#A1806A;--tx:#4A3123;}
+.k-enter{flex:2;--c1:#9A7860;--c2:#7A5C45;--c3:#5E4433;--c4:#4A3426;--tx:#FFF6EA;flex-direction:row;align-items:center;gap:10px;}
+.k-enter b{font-family:var(--ff-body);font-size:1.8rem;font-weight:400;text-shadow:none;}
 .k-enter small{font-size:0.74rem;letter-spacing:0.1em;opacity:1;margin-left:auto;white-space:nowrap;}
-.hero-hint{font-size:0.8rem;color:var(--muted);}
-.hero-hint kbd{font-family:var(--ff-mono);font-size:0.72rem;background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;color:var(--ink2);}
+.hero-hint{font-size:0.8rem;color:#7D6656;margin-top:18px;}
+.hero-hint kbd{font-family:var(--ff-mono);font-size:0.72rem;background:#FFFBF5;border:1px solid #E2D2BC;border-bottom-width:3px;border-radius:6px;padding:1px 6px;color:#5A4232;}
 @media (max-width:900px){.r2{flex-wrap:wrap;}.r2 .key{flex:1 1 calc((100% - 28px) / 3);}.r2 .k-enter{flex:1 1 100%;min-height:64px;}}
+@media (max-width:720px){
+  .hero{padding:96px 16px 56px;gap:16px;}
+  .hello-sub .sep{display:none;}.hello-sub .nw{display:block;}
+  .device{transform:rotateX(10deg);}
+  .lid{transform:perspective(900px) rotateX(-8deg);margin:0 2%;}
+  .case{padding:12px;border-radius:24px;}
+  .screw{width:9px;height:9px;}.screw.tl{top:7px;left:7px}.screw.tr{top:7px;right:7px}.screw.bl{bottom:7px;left:7px}.screw.br{bottom:7px;right:7px}
+  .screen{padding:12px 14px 14px;border-radius:14px;min-height:0;}
+  .scr-top{font-size:0.56rem;}
+  .scr-body{gap:12px;margin-top:10px;}
+  .scr-body img{width:42px;height:42px;}
+  .typed{font-size:0.78rem;min-height:4.8em;}
+  .hinge{height:16px;}
+  .deck{gap:10px;}
+  .well{gap:9px;padding:10px 10px 14px;border-radius:16px;}
+  .r2 .key{flex:1 1 calc((100% - 18px) / 3);}
+  .key{padding:9px 10px 8px;border-radius:12px;}
+  .r1 .key{min-height:92px;}
+  .r2 .key{min-height:78px;}
+  .key small{font-size:0.56rem;letter-spacing:0.05em;}
+  .hero-hint{display:none;}
+}
 @keyframes su{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
 @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
@@ -262,28 +292,6 @@ footer p{font-size:0.75rem;color:var(--muted);}
   nav{gap:10px;padding:8px 8px 8px 18px;}
   .nav-links a:not(.nav-cta){display:none;}
   section.sec{padding:64px 16px;}
-  .hero{padding:96px 16px 44px;gap:20px;}
-  .device{transform:rotateX(4deg);}
-  .case{padding:12px;border-radius:24px;}
-  .screw{width:9px;height:9px;}.screw.tl{top:7px;left:7px}.screw.tr{top:7px;right:7px}.screw.bl{bottom:7px;left:7px}.screw.br{bottom:7px;right:7px}
-  .screen{padding:12px 14px 14px;border-radius:14px;min-height:0;}
-  .scr-top{font-size:0.56rem;}
-  .scr-body{gap:12px;margin-top:10px;}
-  .scr-body img{width:42px;height:42px;}
-  .typed{font-size:0.78rem;min-height:4.8em;}
-  .hinge{height:16px;}
-  .deck{gap:10px;}
-  .well{gap:9px;padding:10px;border-radius:16px;}
-  .r2{flex-wrap:wrap;}
-  .r2 .key{flex:1 1 calc((100% - 18px) / 3);}
-  .r2 .k-enter{flex:1 1 100%;min-height:64px;}
-  .key{padding:9px 10px 8px;border-radius:12px;}
-  .r1 .key{min-height:92px;}
-  .r2 .key{min-height:78px;}
-  .key small{font-size:0.56rem;letter-spacing:0.06em;}
-  .hero-hint{display:none;}
-  .hello-sub .sep{display:none;}
-  .hello-sub .nw{display:block;}
   .about-card,.sg,.exp-item,.path-note{padding:24px 20px;}
   .sgroups{grid-template-columns:1fr;}
   .exp-list{padding-left:24px;}
@@ -318,9 +326,10 @@ footer p{font-size:0.75rem;color:var(--muted);}
   <span class="orb bl" style="width:150px;height:150px;top:10%;right:4%;animation-delay:-4s;"></span>
 
   <div class="hero-intro">
-    <span class="avail"><span class="live"></span>พร้อมเริ่มงานทันที · Now @ SYNDA Thailand</span>
-    <h1 class="hello">สวัสดีค่ะ ฉันชื่อ <span class="g">แอ๊นท์</span></h1>
-    <p class="hello-sub"><span class="nw"><b>ดารุณี ปะโมนะตา</b></span><span class="sep"> · </span><span class="nw">Digital Marketing &amp; AI Specialist</span><span class="sep"> · </span><span class="nw">ประสบการณ์ 5+ ปี</span></p>
+    <span class="avail"><span class="live"></span>สถานะ: พร้อมเริ่มงานทันที</span>
+    <h1 class="hello">ดารุณี ปะโมนะตา<span class="en">Darunee Pamonata</span></h1>
+    <p class="hello-role">Digital Marketing &amp; AI Specialist</p>
+    <p class="hello-sub"><span class="nw">ประสบการณ์มากกว่า 5 ปี</span><span class="sep"> · </span><span class="nw">Performance Marketing</span><span class="sep"> · </span><span class="nw">AI-Powered Data Analysis</span></p>
   </div>
 
   <div class="device-wrap">
@@ -328,10 +337,10 @@ footer p{font-size:0.75rem;color:var(--muted);}
       <div class="case lid">
         <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
         <div class="screen" aria-live="polite">
-          <div class="scr-top"><span>ANT / CREATIVE INDEX</span><span class="st" id="scrState">TYPING</span></div>
+          <div class="scr-top"><span>RESUME / ดารุณี ปะโมนะตา</span><span class="st" id="scrState">TYPING</span></div>
           <div class="scr-body">
-            <img src="assets/hero-darunee.jpg" alt="แอ๊นท์ ดารุณี ปะโมนะตา">
-            <p class="typed"><span id="typed">AI-Powered Analytics · Performance Marketing · Data Reporting · AI-Assisted Web Development</span><span class="caret"></span></p>
+            <img src="assets/hero-darunee.jpg" alt="ดารุณี ปะโมนะตา">
+            <p class="typed"><span id="typed">Digital Marketing &amp; AI Specialist · ประสบการณ์มากกว่า 5 ปี</span><span class="caret"></span></p>
           </div>
         </div>
       </div>
@@ -339,24 +348,24 @@ footer p{font-size:0.75rem;color:var(--muted);}
       <div class="case deck">
         <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
         <div class="well r1">
-          <a class="key k-sky" href="#about" data-k="a" data-say="เกี่ยวกับแอ๊นท์: ใช้ AI ช่วยดึง วิเคราะห์ และสรุปข้อมูลการตลาดให้ผู้บริหารตัดสินใจได้เร็วขึ้น"><b>A</b><small>About me</small></a>
-          <a class="key k-pink" href="#exp" data-k="n" data-say="ตอนนี้: Digital Marketing ที่ บริษัท ซินด้า (ประเทศไทย) จำกัด ยิงแอดห้าง ทำ Report, SEO/GEO, LINE OA และแคมเปญหน้าร้าน"><b>N</b><small>Now @ SYNDA</small></a>
-          <a class="key k-lav" href="https://welcometomyteddyantworld.vercel.app/index.html" target="_blank" rel="noopener" data-k="t" data-say="TEDDYANT World: เว็บคริสต์มาส LEGO 3D พร้อมมินิเกม 3 แบบ ทำด้วย Three.js"><b>T</b><small>TEDDYANT World ↗</small></a>
+          <a class="key k-cream" href="#about" data-k="a" data-say="ข้อมูลโดยย่อ: ผู้เชี่ยวชาญด้าน Digital Marketing ที่ใช้ AI ในการวิเคราะห์ข้อมูลและจัดทำรายงานเพื่อการตัดสินใจของผู้บริหาร"><b>A</b><small>About · Profile</small></a>
+          <a class="key k-caramel" href="#exp" data-k="n" data-say="ตำแหน่งปัจจุบัน: Digital Marketing บริษัท ซินด้า (ประเทศไทย) จำกัด (ก.ค. 2569 – ปัจจุบัน)"><b>N</b><small>Now · Current Position</small></a>
+          <a class="key k-latte" href="#skills" data-k="t" data-say="เครื่องมือและทักษะ: Facebook / TikTok / Google Ads, Google Apps Script, SEO / GEO, LINE OA, Claude, ChatGPT, Codex"><b>T</b><small>Tools &amp; Skills</small></a>
         </div>
         <div class="well r2">
-          <a class="key k-butter" href="Darunee_Pamonata_Resume.pdf" download data-k="r" data-say="ดาวน์โหลดเรซูเม่ PDF 3 หน้า พร้อมผลงานทั้งหมด"><b>R</b><small>Resume PDF</small></a>
-          <a class="key k-mint" href="#exp" data-k="e" data-say="ประสบการณ์: ซินด้า · อินสไปเรชั่น ดีไซน์ · Bananas Investment รวม 5+ ปี"><b>E</b><small>Experience</small></a>
-          <a class="key k-sky" href="#about" data-k="s" data-say="ทักษะ: Claude, ChatGPT, Codex, Facebook / TikTok Ads, Apps Script, SEO / GEO, LINE OA"><b>S</b><small>Skills</small></a>
-          <a class="key k-peach" href="#path" data-k="u" data-say="เส้นทางต่อไป: Marketing Data Analytics จุดตัดของ Digital Marketing และ Data"><b>U</b><small>Up next</small></a>
-          <a class="key k-pink" href="#port" data-k="m" data-say="ผลงาน 9 ชิ้น: Company Visit, TikTok 349K views, Marketing Hub, Product Hub, TEDDYANT World"><b>M</b><small>My work</small></a>
-          <a class="key k-lav" href="#contact" data-k="e2" data-say="อีเมล: darunee.pamo@hotmail.com · โทร 061-129-3757 · LINE 0611293757"><b>E</b><small>E-mail</small></a>
-          <a class="key k-enter" href="#contact" data-k="enter" data-say="ยินดีที่ได้รู้จักค่ะ กด Enter เพื่อไปที่ช่องทางติดต่อ"><b>↵</b><small>LET'S TALK</small></a>
+          <a class="key k-honey" href="Darunee_Pamonata_Resume.pdf" download data-k="r" data-say="ดาวน์โหลดเรซูเม่ฉบับเต็ม (PDF, 3 หน้า)"><b>R</b><small>Resume (PDF)</small></a>
+          <a class="key k-blush" href="#exp" data-k="e" data-say="ประวัติการทำงาน: บริษัท ซินด้า (ประเทศไทย) · บริษัท อินสไปเรชั่น ดีไซน์ · Bananas Investment (บริษัท ภกรณ์ คอร์ป)"><b>E</b><small>Experience</small></a>
+          <a class="key k-mocha" href="#port" data-k="s" data-say="ผลงานที่คัดสรร: Investor Relations, TikTok Content, Landing Page และระบบที่พัฒนาด้วย AI"><b>S</b><small>Selected Works</small></a>
+          <a class="key k-cream" href="#path" data-k="u" data-say="เป้าหมายสายอาชีพ: Marketing Data Analytics"><b>U</b><small>Career Path</small></a>
+          <a class="key k-latte" href="#edu" data-k="m" data-say="การศึกษา: วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมสำรวจ มหาวิทยาลัยกรุงเทพธนบุรี (2563)"><b>M</b><small>Education</small></a>
+          <a class="key k-caramel" href="#contact" data-k="e2" data-say="อีเมล: darunee.pamo@hotmail.com · โทร 061-129-3757"><b>E</b><small>E-mail</small></a>
+          <a class="key k-enter" href="#contact" data-k="enter" data-say="ช่องทางการติดต่อ: โทรศัพท์ อีเมล LINE และ LinkedIn"><b>↵</b><small>CONTACT</small></a>
         </div>
       </div>
     </div>
   </div>
 
-  <p class="hero-hint">กดปุ่มบนกล่อง หรือพิมพ์ <kbd>A</kbd> <kbd>N</kbd> <kbd>T</kbd> <kbd>R</kbd> <kbd>E</kbd> <kbd>S</kbd> <kbd>U</kbd> <kbd>M</kbd> <kbd>↵</kbd> บนคีย์บอร์ดก็ได้</p>
+  <p class="hero-hint">เลือกหัวข้อจากแป้นด้านบน หรือกด <kbd>A</kbd> <kbd>N</kbd> <kbd>T</kbd> <kbd>R</kbd> <kbd>E</kbd> <kbd>S</kbd> <kbd>U</kbd> <kbd>M</kbd> <kbd>↵</kbd> บนแป้นพิมพ์</p>
 </header>
 
 <!-- ABOUT -->
@@ -369,13 +378,13 @@ footer p{font-size:0.75rem;color:var(--muted);}
     <div class="glass about-card rv">
       <p class="about-p">ประยุกต์ใช้ AI (Claude และ Google Apps Script) เพื่อดึง วิเคราะห์ และจัดการข้อมูล Engagement และยอดขายแบบอัตโนมัติ พร้อมจัดทำ Dashboard เพื่อสนับสนุนการตัดสินใจของผู้บริหาร</p>
       <p class="about-p">มีประสบการณ์ด้านการวางแผนและดูแลการตลาดออนไลน์ ครอบคลุม Content Marketing, SEO, Social Media (Facebook, Line OA, TikTok และ YouTube), โฆษณาออนไลน์, KOL/Influencer Marketing, WordPress, Landing Page และ AI-Assisted Web Development รวมถึงการประสานงานโครงการและการพัฒนาธุรกิจ เพื่อสนับสนุนการเติบโตขององค์กร</p>
-      <div class="edu">
+      <div class="edu" id="edu">
         <span>🎓 <strong>วิศวกรรมสำรวจ</strong> ม.กรุงเทพธนบุรี · จบ 2563</span>
         <span><strong>ฝึกงาน:</strong> กรมชลประทาน จ.ชลบุรี 4 เดือน</span>
         <span><strong>Part-time:</strong> THREE BEAR PASTRY</span>
       </div>
     </div>
-    <div class="sgroups">
+    <div class="sgroups" id="skills">
       <div class="glass sg rv"><div class="sg-h"><span class="sg-ic">🤖</span>AI Tools &amp; Workflow</div>
         <div class="chips"><span class="chip hi">Claude</span><span class="chip hi">ChatGPT</span><span class="chip hi">Gemini</span><span class="chip hi">NotebookLM</span><span class="chip hi">Notion AI</span><span class="chip hi">Codex</span><span class="chip hi">GitHub</span><span class="chip hi">Vercel</span></div></div>
       <div class="glass sg rv d1"><div class="sg-h"><span class="sg-ic">📊</span>Data Analysis</div>
@@ -637,9 +646,10 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
   const device=document.getElementById('device'),wrap=device&&device.parentElement;
   if(!out)return;
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const idle=['AI-Powered Analytics · Performance Marketing · Data Reporting · AI-Assisted Web Development',
-    'ตอนนี้ดูแล Digital Marketing ที่ SYNDA Thailand · ยิงแอด · Monthly Report · SEO / GEO',
-    'กดปุ่มไหนก็ได้ เพื่อเปิดดูแต่ละส่วนของเรซูเม่ ✦'];
+  const idle=['Digital Marketing & AI Specialist · ประสบการณ์มากกว่า 5 ปี',
+    'ตำแหน่งปัจจุบัน: Digital Marketing บริษัท ซินด้า (ประเทศไทย) จำกัด',
+    'ความเชี่ยวชาญ: Performance Marketing · AI-Powered Analytics · Data Reporting · SEO / GEO',
+    'เลือกหัวข้อจากแป้นด้านล่างเพื่อดูรายละเอียด'];
   let timer=null,cycle=null,idx=0;
   function type(text,done){
     clearTimeout(timer);
@@ -691,13 +701,13 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
   const camera=new THREE.PerspectiveCamera(35,1,0.1,100);
   camera.position.set(0,0,16);
 
-  scene.add(new THREE.HemisphereLight(0xffffff,0xE9B7CC,0.55));
+  scene.add(new THREE.HemisphereLight(0xffffff,0xE5C7A8,0.55));
   const key=new THREE.DirectionalLight(0xffffff,0.75);key.position.set(5,8,10);scene.add(key);
-  const pinkL=new THREE.PointLight(0xFFB3CF,0.8,40);pinkL.position.set(-8,-4,6);scene.add(pinkL);
-  const blueL=new THREE.PointLight(0xA9D4FF,0.9,40);blueL.position.set(8,4,6);scene.add(blueL);
+  const pinkL=new THREE.PointLight(0xFFCFA8,0.8,40);pinkL.position.set(-8,-4,6);scene.add(pinkL);
+  const blueL=new THREE.PointLight(0xFFE6CC,0.9,40);blueL.position.set(8,4,6);scene.add(blueL);
 
   const mat=(c)=>new THREE.MeshPhysicalMaterial({color:c,roughness:0.28,metalness:0.05,clearcoat:1,clearcoatRoughness:0.15,sheen:0});
-  const PINK=0xF08DB6, BLUE=0x7FB9EC, PINK2=0xF9B3CD, BLUE2=0xA5D0F7, WHITE=0xE6DAFB;
+  const PINK=0xE2BC98, BLUE=0xCFA27A, PINK2=0xF0D9C2, BLUE2=0xE6CDB3, WHITE=0xF6EDE1;
   const items=[
     {g:new THREE.TorusGeometry(1.15,0.42,48,120),m:mat(PINK),p:[5.4,2.6,-1],s:1},
     {g:new THREE.SphereGeometry(0.9,64,64),m:mat(BLUE),p:[-6.8,1.4,-3],s:1},
