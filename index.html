@@ -110,7 +110,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
 .key:active,.key.down{transform:translateY(8px);box-shadow:inset 0 2px 0 rgba(255,255,255,0.7),inset 0 -2px 4px rgba(90,60,30,0.12),0 1px 0 var(--c3),0 2px 0 var(--c4),0 6px 8px -4px rgba(90,60,35,0.45);}
 .key:focus-visible{outline:3px solid #C9966A;outline-offset:5px;}
 .key b{font-family:var(--ff-key);font-weight:800;line-height:1;font-size:clamp(1.8rem,4.4vw,3.1rem);text-shadow:0 1px 0 rgba(255,255,255,0.6);}
-.key small{font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;opacity:.85;line-height:1.35;text-align:left;max-width:100%;}
+.key small{font-size:0.62rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;opacity:.85;line-height:1.35;text-align:left;max-width:100%;white-space:nowrap;}
 .r1 .key{min-height:118px;}
 .r2 .key{min-height:96px;}
 .r2 .key b{font-size:clamp(1.5rem,3.4vw,2.4rem);}
@@ -120,7 +120,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
 .k-honey{--c1:#FBEFD0;--c2:#F0D9A0;--c3:#D8BB73;--c4:#BC9C52;--tx:#634B12;}
 .k-blush{--c1:#FAEAE2;--c2:#EDCDBE;--c3:#D6AE9A;--c4:#BA8E79;--tx:#6E3E2E;}
 .k-mocha{--c1:#EEDFD2;--c2:#DCC3AE;--c3:#C0A189;--c4:#A1806A;--tx:#4A3123;}
-.k-enter{flex:2;--c1:#9A7860;--c2:#7A5C45;--c3:#5E4433;--c4:#4A3426;--tx:#FFF6EA;flex-direction:row;align-items:center;gap:10px;}
+.k-enter{flex:1.5;--c1:#9A7860;--c2:#7A5C45;--c3:#5E4433;--c4:#4A3426;--tx:#FFF6EA;flex-direction:row;align-items:center;gap:10px;}
 .k-enter b{font-family:var(--ff-body);font-size:1.8rem;font-weight:400;text-shadow:none;}
 .k-enter small{font-size:0.74rem;letter-spacing:0.1em;opacity:1;margin-left:auto;white-space:nowrap;}
 .hero-hint{font-size:0.8rem;color:#7D6656;margin-top:18px;}
@@ -128,7 +128,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
 @media (max-width:900px){.r2{flex-wrap:wrap;}.r2 .key{flex:1 1 calc((100% - 28px) / 3);}.r2 .k-enter{flex:1 1 100%;min-height:64px;}}
 @media (max-width:720px){
   .hero{padding:96px 16px 56px;gap:16px;}
-  .hello-sub .sep{display:none;}.hello-sub .nw{display:block;}
+  .hello-sub .sep,.contact-sub .sep{display:none;}.hello-sub .nw,.contact-sub .nw{display:block;}
   .device{transform:rotateX(10deg);}
   .lid{transform:perspective(900px) rotateX(-8deg);margin:0 2%;}
   .case{padding:12px;border-radius:24px;}
@@ -145,7 +145,7 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
   .key{padding:9px 10px 8px;border-radius:12px;}
   .r1 .key{min-height:92px;}
   .r2 .key{min-height:78px;}
-  .key small{font-size:0.56rem;letter-spacing:0.05em;}
+  .key small{font-size:0.54rem;letter-spacing:0.02em;}
   .hero-hint{display:none;}
 }
 @keyframes su{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
@@ -262,6 +262,8 @@ section.sec{position:relative;padding:96px 6vw;}
 .plink{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;font-size:0.74rem;font-weight:600;color:var(--ink);background:#fff;padding:7px 14px;border-radius:999px;text-decoration:none;border:1px solid var(--line);transition:all .2s;}
 .plink:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
 
+.sec-title,.exp-role,.ptitle,.contact-h,.hello,.path-role,.contact-sub,.pdesc{text-wrap:balance;}
+@media (max-width:420px){.sec-title{font-size:1.5rem;}}
 /* CONTACT */
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:0.86rem;padding:13px 24px;border-radius:999px;text-decoration:none;transition:all .25s;}
 .btn-main{background:var(--ink);color:#fff;box-shadow:0 12px 26px -12px rgba(62,46,35,0.6);}
@@ -351,14 +353,14 @@ footer p{font-size:0.75rem;color:var(--muted);}
       <div class="case deck">
         <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
         <div class="well r1">
-          <a class="key k-cream" href="#about" data-k="a" data-say="ข้อมูลโดยย่อ: ผู้เชี่ยวชาญด้าน Digital Marketing ที่ใช้ AI ในการวิเคราะห์ข้อมูลและจัดทำรายงานเพื่อการตัดสินใจของผู้บริหาร"><b>A</b><small>About · Profile</small></a>
-          <a class="key k-caramel" href="#exp" data-k="n" data-say="ตำแหน่งปัจจุบัน: Digital Marketing บริษัท ซินด้า (ประเทศไทย) จำกัด (ก.ค. 2569 – ปัจจุบัน)"><b>N</b><small>Now · Current Position</small></a>
-          <a class="key k-latte" href="#skills" data-k="t" data-say="เครื่องมือและทักษะ: Facebook / TikTok / Google Ads, Google Apps Script, SEO / GEO, LINE OA, Claude, ChatGPT, Codex"><b>T</b><small>Tools &amp; Skills</small></a>
+          <a class="key k-cream" href="#about" data-k="a" data-say="ข้อมูลโดยย่อ: ผู้เชี่ยวชาญด้าน Digital Marketing ที่ใช้ AI ในการวิเคราะห์ข้อมูลและจัดทำรายงานเพื่อการตัดสินใจของผู้บริหาร"><b>A</b><small>Profile</small></a>
+          <a class="key k-caramel" href="#exp" data-k="n" data-say="ตำแหน่งปัจจุบัน: Digital Marketing บริษัท ซินด้า (ประเทศไทย) จำกัด (ก.ค. 2569 – ปัจจุบัน)"><b>N</b><small>Current Role</small></a>
+          <a class="key k-latte" href="#skills" data-k="t" data-say="เครื่องมือและทักษะ: Facebook / TikTok / Google Ads, Google Apps Script, SEO / GEO, LINE OA, Claude, ChatGPT, Codex"><b>T</b><small>Skills</small></a>
         </div>
         <div class="well r2">
-          <a class="key k-honey" href="Darunee_Pamonata_Resume.pdf" download data-k="r" data-say="ดาวน์โหลดเรซูเม่ฉบับเต็ม (PDF, 3 หน้า)"><b>R</b><small>Resume (PDF)</small></a>
+          <a class="key k-honey" href="Darunee_Pamonata_Resume.pdf" download data-k="r" data-say="ดาวน์โหลดเรซูเม่ฉบับเต็ม (PDF, 3 หน้า)"><b>R</b><small>Resume PDF</small></a>
           <a class="key k-blush" href="#exp" data-k="e" data-say="ประวัติการทำงาน: บริษัท ซินด้า (ประเทศไทย) · บริษัท อินสไปเรชั่น ดีไซน์ · Bananas Investment (บริษัท ภกรณ์ คอร์ป)"><b>E</b><small>Experience</small></a>
-          <a class="key k-mocha" href="#port" data-k="s" data-say="ผลงานที่คัดสรร: Investor Relations, TikTok Content, Landing Page และระบบที่พัฒนาด้วย AI"><b>S</b><small>Selected Works</small></a>
+          <a class="key k-mocha" href="#port" data-k="s" data-say="ผลงานที่คัดสรร: Investor Relations, TikTok Content, Landing Page และระบบที่พัฒนาด้วย AI"><b>S</b><small>Portfolio</small></a>
           <a class="key k-cream" href="#path" data-k="u" data-say="เป้าหมายสายอาชีพ: Marketing Data Analytics"><b>U</b><small>Career Path</small></a>
           <a class="key k-latte" href="#edu" data-k="m" data-say="การศึกษา: วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมสำรวจ มหาวิทยาลัยกรุงเทพธนบุรี (2563)"><b>M</b><small>Education</small></a>
           <a class="key k-caramel" href="#contact" data-k="e2" data-say="อีเมล: darunee.pamo@hotmail.com · โทร 061-129-3757"><b>E</b><small>E-mail</small></a>
@@ -375,7 +377,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
 <section class="sec" id="about">
   <div class="sec-head rv">
     <span class="sec-lbl">เกี่ยวกับ</span>
-    <h2 class="sec-title">Digital Marketing &amp; AI Specialist<br><em>ประสบการณ์จริง 5 ปี</em></h2>
+    <h2 class="sec-title"><span class="nw">Digital Marketing</span> <span class="nw">&amp; AI Specialist</span><br><em>ประสบการณ์จริง 5 ปี</em></h2>
   </div>
   <div class="about-grid">
     <div class="glass about-card rv">
@@ -431,7 +433,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
       <div class="exp-top">
         <div>
           <div class="exp-co">บริษัท อินสไปเรชั่น ดีไซน์ จำกัด</div>
-          <div class="exp-role">Secretary &amp; Coordinating Assistant</div>
+          <div class="exp-role"><span class="nw">Secretary &amp;</span> <span class="nw">Coordinating Assistant</span></div>
         </div>
         <span class="exp-date">ต.ค. 2568 – มิ.ย. 2569</span>
       </div>
@@ -468,7 +470,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
 <section class="sec" id="path">
   <div class="sec-head rv">
     <span class="sec-lbl">เส้นทางอาชีพ</span>
-    <h2 class="sec-title">สาย <em>Marketing Data Analytics</em><br>จุดตัดของ Digital Marketing และ Data Analysis</h2>
+    <h2 class="sec-title">สาย <em class="nw">Marketing Data Analytics</em><br><span class="nw">จุดตัดของ</span> <span class="nw">Digital Marketing</span> <span class="nw">และ Data Analysis</span></h2>
   </div>
   <div class="path-wrap">
     <div class="glass path-diagram rv">
@@ -480,7 +482,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
       </div>
       <div class="path-link merge"><span class="vline vl"></span><span class="vline vr"></span><span class="hline"></span><span class="vline vc arrow"></span></div>
       <div class="path-row two">
-        <div class="path-box"><div class="path-tag">3–5 ปี</div><div class="path-role">Digital Marketing /<br>Growth Manager</div><div class="path-sub">Data Strategy · Team Lead</div></div>
+        <div class="path-box"><div class="path-tag">3–5 ปี</div><div class="path-role">Digital Marketing /<br>Growth Manager</div><div class="path-sub"><span class="nw">Data Strategy</span> · <span class="nw">Team Lead</span></div></div>
         <span class="lat">⇄</span>
         <div class="path-box"><div class="path-tag">3–5 ปี</div><div class="path-role">Marketing Analytics<br>Manager</div><div class="path-sub">Forecasting · KPI</div></div>
       </div>
@@ -488,14 +490,14 @@ footer p{font-size:0.75rem;color:var(--muted);}
       <div class="path-row two">
         <div class="path-box"><div class="path-tag">1–2 ปี</div><div class="path-role">Digital Marketing<br>Analyst</div><div class="path-sub">Campaign Analytics</div></div>
         <span class="lat">⇄</span>
-        <div class="path-box"><div class="path-tag">1–2 ปี</div><div class="path-role">Marketing Data<br>Analyst</div><div class="path-sub">Dashboard · SQL/Sheets</div></div>
+        <div class="path-box"><div class="path-tag">1–2 ปี</div><div class="path-role">Marketing Data<br>Analyst</div><div class="path-sub"><span class="nw">Dashboard</span> · <span class="nw">SQL/Sheets</span></div></div>
       </div>
       <div class="path-link split"><span class="vline vc"></span><span class="hline"></span><span class="vline vl arrow"></span><span class="vline vr arrow"></span></div>
       <div class="path-row one">
         <div class="path-box now">
           <div class="path-tag">ตอนนี้</div>
           <div class="path-role">Marketing &amp; AI-Powered<br>Data Coordinator</div>
-          <div class="path-sub">Ads · Content · AI Reporting</div>
+          <div class="path-sub"><span class="nw">Ads · Content</span> · <span class="nw">AI Reporting</span></div>
         </div>
       </div>
     </div>
@@ -598,7 +600,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
     <article class="pcard full rv">
       <div class="pimg-w"><img class="pimg" src="assets/cover-teddyant-world.jpg" alt="TEDDYANT World" loading="lazy"><span class="pnum">09</span></div>
       <div class="pbody"><span class="pbadge bg">Three.js 3D · Web Game</span>
-        <h3 class="ptitle">Welcome to my TEDDYANT World</h3>
+        <h3 class="ptitle"><span class="nw">Welcome to my</span> <span class="nw">TEDDYANT World</span></h3>
         <p class="pdesc">เว็บคริสต์มาสและปีใหม่ 2027 สไตล์บล็อก LEGO แบบ 3D ชื่อเว็บต่อตัวเองจากตัวต่อ แล้วเปิดเข้าสู่ปราสาทหิมะพร้อมเพลงกล่องดนตรี มีมินิเกม 3 แบบ: เดินเก็บดาวและของขวัญ, Broom Chase ขี่ไม้กวาดไล่จับดาวทอง และ The Missing Star เกมนักสืบสำหรับเด็ก (ไทย / อังกฤษ) เล่นได้ทั้งมือถือและคอมพิวเตอร์</p>
         <div class="plinks">
           <a href="https://welcometomyteddyantworld.vercel.app/index.html" class="plink" target="_blank" rel="noopener">🎄 เข้าเว็บ</a>
@@ -621,7 +623,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
     <div class="contact-in">
       <span class="sec-lbl">ติดต่อ</span>
       <h2 class="contact-h"><span class="nw">พร้อมเรียนรู้</span><span class="nw">และพัฒนาตนเอง</span><br><em><span class="nw">และร่วมเป็นแรงขับเคลื่อน</span><span class="nw">ให้บริษัทเติบโต</span></em></h2>
-      <p class="contact-sub"><span class="nw">พร้อมเริ่มงานทันที</span> · <span class="nw">ยินดีรับงานในกรุงเทพฯ</span> <span class="nw">และฝั่งธนบุรี</span></p>
+      <p class="contact-sub"><span class="nw">พร้อมเริ่มงานทันที</span><span class="sep"> · </span><span class="nw">ยินดีรับงานในกรุงเทพฯ และฝั่งธนบุรี</span></p>
       <div class="crow">
         <a href="tel:0611293757" class="ccard"><span class="cicon">📞</span><span class="clbl">โทรศัพท์</span><span class="cval">061-129-3757</span></a>
         <a href="mailto:darunee.pamo@hotmail.com" class="ccard"><span class="cicon">✉️</span><span class="clbl">อีเมล</span><span class="cval">darunee.pamo@hotmail.com</span></a>
