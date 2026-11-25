@@ -129,7 +129,11 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
 .k-enter small{font-size:0.74rem;letter-spacing:0.1em;opacity:1;margin-left:auto;white-space:nowrap;}
 .hero-hint{font-size:0.8rem;color:#7D6656;margin-top:18px;}
 .hero-hint kbd{font-family:var(--ff-mono);font-size:0.72rem;background:#FFFBF5;border:1px solid #E2D2BC;border-bottom-width:3px;border-radius:6px;padding:1px 6px;color:#5A4232;}
-@media (max-width:900px){.r2{flex-wrap:wrap;}.r2 .key{flex:1 1 calc((100% - 28px) / 3);}.r2 .k-enter{flex:1 1 100%;min-height:64px;}}
+.key small .sm{display:none;}
+@media (max-width:900px){.well.r2{flex-wrap:wrap;row-gap:18px;}.r2 .key{flex:1 1 0;}.r2 .k-enter{flex:1 1 100%;min-height:64px;}}
+@media (max-width:900px){.r2 .key small .lg{display:none;}.r2 .key small .sm{display:inline;}.r2 .key{align-items:center;}.r2 .key small{text-align:center;letter-spacing:0.02em;}.r2 .k-enter{align-items:center;}}
+@media (max-width:720px){.well.r2{gap:16px 6px;}.r2 .key{padding:9px 3px 8px;}.r2 .k-enter{padding:9px 14px;}}
+@media (max-width:380px){.r2 .key small{font-size:0.46rem;letter-spacing:0;}}
 @media (max-width:720px){
   .hero{padding:96px 16px 56px;gap:16px;}
   .hello-sub .sep,.contact-sub .sep{display:none;}.hello-sub .nw,.contact-sub .nw{display:block;}
@@ -145,10 +149,11 @@ nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;disp
   .hinge{height:16px;}
   .deck{gap:10px;}
   .well{gap:9px;padding:10px 10px 14px;border-radius:16px;}
-  .r2 .key{flex:1 1 calc((100% - 18px) / 3);}
+  .r2 .key{flex:1 1 0;}
+  .r2 .k-enter{flex:1 1 100%;}
   .key{padding:9px 10px 8px;border-radius:12px;}
   .r1 .key{min-height:92px;}
-  .r2 .key{min-height:78px;}
+  .r2 .key{min-height:72px;}
   .key small{font-size:0.54rem;letter-spacing:0.02em;}
   .hero-hint{display:none;}
 }
@@ -364,12 +369,12 @@ footer p{font-size:0.75rem;color:var(--muted);}
           <a class="key k-latte" href="#skills" data-k="t" data-say="เครื่องมือและทักษะ: Facebook / TikTok / Google Ads, Google Apps Script, SEO / GEO, LINE OA, Claude, ChatGPT, Codex"><b>T</b><small>Skills</small></a>
         </div>
         <div class="well r2">
-          <a class="key k-honey" href="Darunee_Pamonata_Resume.pdf" download data-k="r" data-say="ดาวน์โหลดเรซูเม่ฉบับเต็ม (PDF, 3 หน้า)"><b>R</b><small>Resume</small></a>
-          <a class="key k-blush" href="#exp" data-k="e" data-say="ประวัติการทำงาน: บริษัท ซินด้า (ประเทศไทย) · บริษัท อินสไปเรชั่น ดีไซน์ · Bananas Investment (บริษัท ภกรณ์ คอร์ป)"><b>E</b><small>Experience</small></a>
-          <a class="key k-mocha" href="#port" data-k="s" data-say="ผลงานที่คัดสรร: Investor Relations, TikTok Content, Landing Page และระบบที่พัฒนาด้วย AI"><b>S</b><small>Portfolio</small></a>
-          <a class="key k-cream" href="#path" data-k="u" data-say="เป้าหมายสายอาชีพ: Marketing Data Analytics"><b>U</b><small>Career Path</small></a>
-          <a class="key k-latte" href="#edu" data-k="m" data-say="การศึกษา: วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมสำรวจ มหาวิทยาลัยกรุงเทพธนบุรี (2563)"><b>M</b><small>Education</small></a>
-          <a class="key k-caramel" href="#contact" data-k="e2" data-say="อีเมล: darunee.pamo@hotmail.com · โทร 061-129-3757"><b>E</b><small>E-mail</small></a>
+          <a class="key k-honey" href="Darunee_Pamonata_Resume.pdf" download data-k="r" data-say="ดาวน์โหลดเรซูเม่ฉบับเต็ม (PDF, 3 หน้า)"><b>R</b><small><span class="lg">Resume</span><span class="sm">CV</span></small></a>
+          <a class="key k-blush" href="#exp" data-k="e" data-say="ประวัติการทำงาน: บริษัท ซินด้า (ประเทศไทย) · บริษัท อินสไปเรชั่น ดีไซน์ · Bananas Investment (บริษัท ภกรณ์ คอร์ป)"><b>E</b><small><span class="lg">Experience</span><span class="sm">Jobs</span></small></a>
+          <a class="key k-mocha" href="#port" data-k="s" data-say="ผลงานที่คัดสรร: Investor Relations, TikTok Content, Landing Page และระบบที่พัฒนาด้วย AI"><b>S</b><small><span class="lg">Portfolio</span><span class="sm">Works</span></small></a>
+          <a class="key k-cream" href="#path" data-k="u" data-say="เป้าหมายสายอาชีพ: Marketing Data Analytics"><b>U</b><small><span class="lg">Career Path</span><span class="sm">Path</span></small></a>
+          <a class="key k-latte" href="#edu" data-k="m" data-say="การศึกษา: วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมสำรวจ มหาวิทยาลัยกรุงเทพธนบุรี (2563)"><b>M</b><small><span class="lg">Education</span><span class="sm">Edu</span></small></a>
+          <a class="key k-caramel" href="#contact" data-k="e2" data-say="อีเมล: darunee.pamo@hotmail.com · โทร 061-129-3757"><b>E</b><small><span class="lg">E-mail</span><span class="sm">Mail</span></small></a>
           <a class="key k-enter" href="#contact" data-k="enter" data-say="ช่องทางการติดต่อ: โทรศัพท์ อีเมล LINE และ LinkedIn"><b>↵</b><small>CONTACT</small></a>
         </div>
       </div>
